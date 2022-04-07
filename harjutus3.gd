@@ -1,32 +1,23 @@
 extends Node
 
-var elud1 = 100
-var elud2 = 100
+var elud = 100
+var vastane = 100
 
 func _ready():
-	
-	var rng = RandomNumberGenerator.new()
-	
-	
-	while elud1 > 0 or elud2 > 0:
-		
-		rng.randomize()
-		löök = rng.randf_range(5, 15)
-		print("Sul on",elud1)
-		elud1 -= löök1
-		
-		
-		
-		rng.randomize()
-		löök1 = rng.randf_range(5, 15)
-		print("Vastasel on",elud2)
-		elud2 -= löök
-		
-		if elud1 >= 0:
-			("Sa võitsid")
-		elif elud2 >= 0:
-			("Vastane võitis")
-		
+	while vastane >= 0 or elud >= 0:
+		randomize()
+		var dmg = round(rand_range(8,15))
+		randomize()
+		var damage = round(rand_range(10,17))
+		print('P1 Hit: ',dmg,' P2 elud: ',vastane)
+		print('P2 Hit: ',damage,' P1 elud: ',elud)
+		vastane -= dmg
+		elud -= damage
+	print()
+	if vastane > elud:
+		print('Mängija 1 võitis!')
+	else:
+		print('Mängija 2 võitis!')
 		
 		
 		
