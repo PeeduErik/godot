@@ -10,11 +10,12 @@ func _ready():
 	print("-------------------------")
 	print("------Tulista kolli------")
 	print("------Peedu Erik Pajo------")
-	print("-------------------------")
+	$"bg2/Gameover".visible = false
 	
 	
 
 func _process(delta):
+	
 	if Input.is_action_just_pressed("reload"):
 		padrunid = 5
 		print("Sa panid uue salve ja sul on ",padrunid)
@@ -41,7 +42,10 @@ func _process(delta):
 	
 	if hp <= 0:
 				print("Sa võitsid ja tapsid koletise")
-				get_tree().quit()
+				print("Sinu skoor on: ",skoor)
+				$"bg2/Gameover".visible = true
+				
+				get_tree().paused = true
 			
 		
 		
